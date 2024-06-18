@@ -8,8 +8,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using YouTubeApi.Application.Interfaces.Repositories;
+using YouTubeApi.Application.UnitOfWorks;
 using YouTubeApi.Persistence.Contexts;
 using YouTubeApi.Persistence.Repositories;
+using YouTubeApi.Persistence.UnitOfWorks;
 
 namespace YouTubeApi.Persistence;
 
@@ -22,5 +24,7 @@ public static class Registration
 
         services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
         services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }
