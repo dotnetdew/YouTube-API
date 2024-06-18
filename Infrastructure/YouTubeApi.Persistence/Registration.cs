@@ -7,7 +7,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using YouTubeApi.Application.Interfaces.Repositories;
 using YouTubeApi.Persistence.Contexts;
+using YouTubeApi.Persistence.Repositories;
 
 namespace YouTubeApi.Persistence;
 
@@ -17,5 +19,7 @@ public static class Registration
     {
         services.AddDbContext<AppDbContext>(opt => 
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
     }
 }
