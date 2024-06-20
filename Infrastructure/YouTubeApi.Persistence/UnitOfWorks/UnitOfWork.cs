@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YouTubeApi.Application.Interfaces.Repositories;
-using YouTubeApi.Application.UnitOfWorks;
+using YouTubeApi.Application.Interfaces.UnitOfWorks;
 using YouTubeApi.Persistence.Contexts;
 using YouTubeApi.Persistence.Repositories;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using YouTubeApi.Application.Interfaces.Repositories;
 using YouTubeApi.Domain.Common;
 
-namespace YouTubeApi.Application.UnitOfWorks;
+namespace YouTubeApi.Application.Interfaces.UnitOfWorks;
 
 public interface IUnitOfWork : IAsyncDisposable
 {
