@@ -20,19 +20,27 @@ namespace YouTubeApi.Application.Features.Products.Command.CreateProduct
         }
         public async Task Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
-            Product product = new(request.Title, request.Description, request.BrandId, request.Price, request.Discount);
-
-            await unitOfWork.GetWriteRepository<Product>().AddAsync(product);
-            if (await unitOfWork.SaveAsync() > 0)
+            try
             {
-                foreach (var categoryId in request.CategoryIds)
-                    await unitOfWork.GetWriteRepository<ProductCategory>().AddAsync(new()
-                    {
-                        ProductId = product.Id,
-                        CategoryId = categoryId
-                    });
+                Product product = new(request.Title, request.Description, request.BrandId, request.Price, request.Discount);
 
-                await unitOfWork.SaveAsync();
+                await unitOfWork.GetWriteRepository<Product>().AddAsync(product);
+
+                if (await unitOfWork.SaveAsync() > 0)
+                {
+                    foreach (var categoryId in request.CategoryIds)
+                        await unitOfWork.GetWriteRepository<ProductCategory>().AddAsync(new()
+                        {
+                            ProductId = product.Id,
+                            CategoryId = categoryId
+                        });
+
+                    await unitOfWork.SaveAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }

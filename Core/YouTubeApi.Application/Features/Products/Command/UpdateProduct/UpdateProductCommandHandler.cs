@@ -30,7 +30,7 @@ namespace YouTubeApi.Application.Features.Products.Command.UpdateProduct
                 .GetAllAsync(x => x.ProductId == product.Id);
 
             await unitOfWork.GetWriteRepository<ProductCategory>()
-                .HardDeleRangeteAsync(productCategories);
+                .HardDeleRangeAsync(productCategories);
 
             foreach (var categoryId in request.CategoryIds)
             {
