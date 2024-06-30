@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using YouTubeApi.Persistence.Contexts;
 
@@ -11,9 +12,11 @@ using YouTubeApi.Persistence.Contexts;
 namespace YouTubeApi.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240626083544_Update1")]
+    partial class Update1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,23 +52,23 @@ namespace YouTubeApi.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CraetedDate = new DateTime(2024, 6, 30, 10, 16, 7, 134, DateTimeKind.Utc).AddTicks(7978),
+                            CraetedDate = new DateTime(2024, 6, 26, 8, 35, 44, 492, DateTimeKind.Utc).AddTicks(6343),
                             IsDeleted = false,
-                            Name = "Toys, Electronics & Baby"
+                            Name = "Jewelery"
                         },
                         new
                         {
                             Id = 2,
-                            CraetedDate = new DateTime(2024, 6, 30, 10, 16, 7, 134, DateTimeKind.Utc).AddTicks(7998),
+                            CraetedDate = new DateTime(2024, 6, 26, 8, 35, 44, 492, DateTimeKind.Utc).AddTicks(6361),
                             IsDeleted = false,
-                            Name = "Garden & Outdoors"
+                            Name = "Automotive"
                         },
                         new
                         {
                             Id = 3,
-                            CraetedDate = new DateTime(2024, 6, 30, 10, 16, 7, 134, DateTimeKind.Utc).AddTicks(8007),
+                            CraetedDate = new DateTime(2024, 6, 26, 8, 35, 44, 492, DateTimeKind.Utc).AddTicks(6433),
                             IsDeleted = true,
-                            Name = "Beauty"
+                            Name = "Jewelery, Baby & Clothing"
                         });
                 });
 
@@ -101,7 +104,7 @@ namespace YouTubeApi.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 135, DateTimeKind.Local).AddTicks(2695),
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 492, DateTimeKind.Local).AddTicks(9589),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -110,7 +113,7 @@ namespace YouTubeApi.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 135, DateTimeKind.Local).AddTicks(2697),
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 492, DateTimeKind.Local).AddTicks(9593),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -119,7 +122,7 @@ namespace YouTubeApi.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 135, DateTimeKind.Local).AddTicks(2700),
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 492, DateTimeKind.Local).AddTicks(9596),
                             IsDeleted = false,
                             Name = "Bilgisayar/Tablet",
                             ParentId = 1,
@@ -128,7 +131,7 @@ namespace YouTubeApi.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 135, DateTimeKind.Local).AddTicks(2702),
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 492, DateTimeKind.Local).AddTicks(9599),
                             IsDeleted = false,
                             Name = "Kadin",
                             ParentId = 2,
@@ -172,28 +175,28 @@ namespace YouTubeApi.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 138, DateTimeKind.Local).AddTicks(1345),
-                            Description = "Alias perferendis dicta aliquid deleniti.",
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 495, DateTimeKind.Local).AddTicks(6826),
+                            Description = "Için türemiş tempora öyle kapının.",
                             IsDeleted = false,
-                            Title = "Gülüyorum."
+                            Title = "Yazın."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 138, DateTimeKind.Local).AddTicks(1395),
-                            Description = "Ipsam sevindi suscipit sevindi gazete.",
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 495, DateTimeKind.Local).AddTicks(6882),
+                            Description = "Sarmal değerli alias dignissimos exercitationem.",
                             IsDeleted = true,
-                            Title = "Cezbelendi hesap."
+                            Title = "Qui totam."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 138, DateTimeKind.Local).AddTicks(1434),
-                            Description = "Exercitationem hesap inventore incidunt doğru.",
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 495, DateTimeKind.Local).AddTicks(6928),
+                            Description = "Minima karşıdakine aliquid inventore et.",
                             IsDeleted = false,
-                            Title = "Ekşili."
+                            Title = "Eve."
                         });
                 });
 
@@ -239,23 +242,23 @@ namespace YouTubeApi.Persistence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 141, DateTimeKind.Local).AddTicks(8818),
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 499, DateTimeKind.Local).AddTicks(5557),
                             Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Discount = 2.140361208584010m,
+                            Discount = 5.82223553586390m,
                             IsDeleted = false,
-                            Price = 321.86m,
-                            Title = "Tasty Fresh Chair"
+                            Price = 206.27m,
+                            Title = "Small Metal Ball"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CraetedDate = new DateTime(2024, 6, 30, 15, 16, 7, 141, DateTimeKind.Local).AddTicks(8859),
-                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                            Discount = 9.698697109497860m,
+                            CraetedDate = new DateTime(2024, 6, 26, 13, 35, 44, 499, DateTimeKind.Local).AddTicks(5600),
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Discount = 6.737917100530440m,
                             IsDeleted = false,
-                            Price = 520.13m,
-                            Title = "Intelligent Rubber Pants"
+                            Price = 906.74m,
+                            Title = "Gorgeous Soft Gloves"
                         });
                 });
 
