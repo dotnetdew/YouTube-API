@@ -15,15 +15,13 @@ namespace YouTubeApi.Persistence.Configurations
         {
             builder.HasKey(x => new { x.ProductId, x.CategoryId });
 
-            builder
-                .HasOne(p => p.Product)
+            builder.HasOne(p => p.Product)
                 .WithMany(pc => pc.ProductCategories)
                 .HasForeignKey(p => p.ProductId).OnDelete(DeleteBehavior.Cascade);
 
-            builder
-                .HasOne(p => p.Category)
+            builder.HasOne(c => c.Category)
                 .WithMany(pc => pc.ProductCategories)
-                .HasForeignKey(p => p.CategoryId).OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(c => c.CategoryId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using YouTubeApi.Application.Features.Products.Command.CreateProduct;
+using YouTubeApi.Application.Features.Products.Command.DeleteProduct;
+using YouTubeApi.Application.Features.Products.Command.UpdateProduct;
 using YouTubeApi.Application.Features.Products.Queries.GetAllProducts;
 
 namespace YouTubeApi.Api.Controllers
@@ -27,7 +29,21 @@ namespace YouTubeApi.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateProduct(CreateProductCommandRequest request)
         {
-            mediator.Send(request);
+            await mediator.Send(request);
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
+        {
+            await mediator.Send(request);
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteProduct(DeleteProductCommandRequest request)
+        {
+            await mediator.Send(request);
             return Ok();
         }
     }
