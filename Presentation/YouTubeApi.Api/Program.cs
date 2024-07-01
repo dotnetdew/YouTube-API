@@ -1,6 +1,7 @@
 using YouTubeApi.Persistence;
 using YouTubeApi.Application;
 using YouTubeApi.Mapper;
+using YouTubeApi.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.ConfigureExceptionHandlingMiddleware();
 
 app.UseAuthorization();
 
